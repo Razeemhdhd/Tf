@@ -21,12 +21,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 KEY_PRICES = {
-    'hour': 10,  # 10 Rs per hour
-    'day': 80,   # 80 Rs per day
-    'week': 500  # 500 Rs per week
+    'hour': 50,  # 50 Rs per hour
+    'day': 150,   # 150 Rs per day
+    'week': 600  # 600 Rs per week
 }
-ADMIN_IDS = [5344691638, 5344691638]
-BOT_TOKEN = "7288538093AAFZkzlq9XfSStJ2ix6LfIFYmy7lHxA"
+ADMIN_IDS = [1739558531, 7702119573]
+BOT_TOKEN = "7567058488:AAGsBuxmphMuhqIMAa6M-loV_WnAp8v7Sf8"
 thread_count = 900
 packet_size = 9
 ADMIN_FILE = 'admin_data.json'
@@ -461,7 +461,7 @@ def process_attack_command(message, chat_id):
 
 @bot.message_handler(commands=['owner'])
 def send_owner_info(message):
-    owner_message = "This Bot Has Been Developed By ᚛ @KaliaYtOwner ᚜"  
+    owner_message = "This Bot Has Been Developed By ᚛ @DHS_RAZEEM ᚜"  
     bot.send_message(message.chat.id, owner_message)
 
 @bot.message_handler(commands=['addadmin'])
@@ -609,7 +609,7 @@ def send_welcome(message):
     elif is_admin(user_id):
         balance = get_admin_balance(user_id)
         welcome_message = (
-            f"Welcome, Admin! Developed By ᚛ @KaliaYtOwner ᚜\n\n"
+            f"Welcome, Admin! Developed By ᚛ @DHS_RAZEEM ᚜\n\n"
             f"Your Balance: {balance}\n\n"
             f"Admin Commands:\n"
             f"/genkey - Generate new key\n"
@@ -642,9 +642,9 @@ def genkey_command(message):
         bot.send_message(chat_id, (
             "*Usage: /genkey <amount> <unit>*\n\n"
             "Available units and prices:\n"
-            "- hour/hours (10₹ per hour)\n"
-            "- day/days (80₹ per day)\n"
-            "- week/weeks (500₹ per week)"
+            "- hour/hours (50₹ per hour)\n"
+            "- day/days (150₹ per day)\n"
+            "- week/weeks (600₹ per week)"
         ), parse_mode='Markdown')
         return
     
@@ -832,12 +832,12 @@ def attack_button_handler(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @KaliaYtOwner ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00 ᚜*", parse_mode='Markdown')
         return
 
     valid_until = datetime.fromisoformat(found_user['valid_until'])
     if datetime.now() > valid_until:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @KaliaYtOwner ᚜.*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00 ᚜.*", parse_mode='Markdown')
         return
 
     try:
@@ -900,7 +900,7 @@ def my_account(message):
                 f"ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ: {current_time}"
             )
     else:
-        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @KaliaYtOwner ᚜."
+        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00
 
     bot.send_message(message.chat.id, account_info)
 
