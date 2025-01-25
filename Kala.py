@@ -31,7 +31,7 @@ thread_count = 900
 packet_size = 9
 ADMIN_FILE = 'admin_data.json'
 last_attack_times = {}
-COOLDOWN_MINUTES = 0
+COOLDOWN_MINUTES = 2
 
 def check_cooldown(user_id: int) -> tuple[bool, int]:
     """
@@ -395,7 +395,7 @@ def attack_command(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @KaliaYtOwner ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @SankexD ᚜*", parse_mode='Markdown')
         return
 
     try:
@@ -461,7 +461,7 @@ def process_attack_command(message, chat_id):
 
 @bot.message_handler(commands=['owner'])
 def send_owner_info(message):
-    owner_message = "This Bot Has Been Developed By ᚛ @DHS_RAZEEM ᚜"  
+    owner_message = "This Bot Has Been Developed By ᚛ @TGRAZEEM ᚜"  
     bot.send_message(message.chat.id, owner_message)
 
 @bot.message_handler(commands=['addadmin'])
@@ -596,7 +596,7 @@ def send_welcome(message):
 
     if is_super_admin(user_id):
         welcome_message = (
-            f"Welcome, Super Admin! Developed By ᚛ @KaliaYtOwner ᚜\n\n"
+            f"Welcome, Super Admin! Developed By ᚛ @SankexD ᚜\n\n"
             f"Admin Commands:\n"
             f"/addadmin - Add new admin\n"
             f"/removeadmin - Remove admin\n"
@@ -767,7 +767,7 @@ def remove_user_command(message):
     chat_id = message.chat.id
 
     if not is_admin(user_id):
-        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @KaliaYtOwner ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @SankexD ᚜*", parse_mode='Markdown')
         return
 
     cmd_parts = message.text.split()
@@ -900,7 +900,7 @@ def my_account(message):
                 f"ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ: {current_time}"
             )
     else:
-        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00
+        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @SankexD
 
     bot.send_message(message.chat.id, account_info)
 
