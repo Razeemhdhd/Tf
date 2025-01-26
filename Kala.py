@@ -6,6 +6,7 @@ import telebot
 import asyncio
 import random
 import string
+from pymongo import MongoClient
 from datetime import datetime, timedelta
 from telebot.apihelper import ApiTelegramException
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
@@ -27,6 +28,7 @@ KEY_PRICES = {
 }
 ADMIN_IDS = [5545469644, 7702119573]
 BOT_TOKEN = "7567058488:AAGsBuxmphMuhqIMAa6M-loV_WnAp8v7Sf8"
+MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
 thread_count = 900
 packet_size = 9
 ADMIN_FILE = 'admin_data.json'
@@ -118,6 +120,10 @@ def calculate_key_price(amount: int, time_unit: str) -> float:
     """Calculate the price for a key based on duration"""
     base_price = KEY_PRICES.get(time_unit.lower().rstrip('s'), 0)
     return base_price * amount
+
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client['zoya']
+users_collection = db.users
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
