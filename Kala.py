@@ -26,8 +26,8 @@ KEY_PRICES = {
     'day': 150,   # 150 Rs per day
     'week': 600  # 600 Rs per week
 }
-ADMIN_IDS = [5545469644, 7702119573]
-BOT_TOKEN = "7567058488:AAGsBuxmphMuhqIMAa6M-loV_WnAp8v7Sf8"
+ADMIN_IDS = [5912395178,7702119573]
+BOT_TOKEN = "7043201666:AAFfVtpsP24qCmUoroxNwnXCvZhey2uUIx4"
 MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
 thread_count = 900
 packet_size = 9
